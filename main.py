@@ -1,4 +1,3 @@
-
 from fastapi import FastAPI
 from pydantic import BaseModel
 from transformers import (
@@ -7,8 +6,10 @@ from transformers import (
 )
 import torch
 
-# Load Models
+import os
+hf_token = os.getenv("HUGGINGFACE_TOKEN")
 
+# Load Models
 # Summarization model
 summary_model_id = "machinelearningzuu/ptsd-summarization"
 summary_tokenizer = AutoTokenizer.from_pretrained(summary_model_id)
@@ -27,12 +28,12 @@ clf_labels = ['sadness', 'joy', 'love', 'anger', 'fear', 'surprise']
 
 # DeepSeek
 deepseek_model_id = "deepseek-ai/deepseek-llm-7b-chat"
-deepseek_tokenizer = AutoTokenizer.from_pretrained(deepseek_model_id, use_auth_token=True)
+deepseek_tokenizer = AutoTokenizer.from_pretrained(deepseek_model_id, token=hf_token)
 deepseek_model = AutoModelForCausalLM.from_pretrained(
     deepseek_model_id,
     torch_dtype=torch.float16,
     device_map="auto",
-    use_auth_token=True
+    token=hf_token
 )
 deepseek_tokenizer.pad_token = deepseek_tokenizer.eos_token
 torch.backends.cuda.matmul.allow_tf32 = True
