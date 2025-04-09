@@ -3,7 +3,7 @@
 A **FastAPI** project that leverages AI to summarize PTSD-related text, analyze emotions, and generate coping suggestions.
 
 ## Gradio Demo Code
-You can access the project here: [Mental Health API Project](https://github.com/felixchiuman/mental-health-api)
+You can access the project here: [Mental Health API Project](https://github.com/felixchiuman/mental-health-assistant)
 
 ## Features
 
