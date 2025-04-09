@@ -4,6 +4,8 @@ A **FastAPI** project that leverages AI to summarize PTSD-related text, analyze 
 
 ## Gradio Demo Code
 You can access the gradio demo code here: [Mental Health Assistant Code](https://github.com/felixchiuman/mental-health-assistant)
+
+
 You can access the gradio demo project here: [Mental Health Assistant](https://huggingface.co/spaces/felixchiuman/mental-health-assistant)
 
 
